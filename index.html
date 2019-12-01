@@ -8,7 +8,8 @@
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
         integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+        integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous" />
     <title>Weather App</title>
 </head>
 
@@ -16,23 +17,65 @@
     <header>
         <h1>Weather Dashboard</h1>
     </header>
-    <div class="city-search"></div>
-    <h4>Search for a City:</h4>
-    <form action="#">
-        <input type="text" placeholder="Search...">
-        <button type="submit"><i class="fa fa-search"></i></button>
-        <input type="text" placeholder="Austin">
-        <input type="text" placeholder="Chicago">
-        <input type="text" placeholder="New York">
-        <input type="text" placeholder="Orlando">
-        <input type="text" placeholder="San Francisco">
-        <input type="text" placeholder="Seattle">
-        <input type="text" placeholder="Denver">
-        <input type="text" placeholder="Atlanta">
-    </form>
 
-    <div class="search-results"></div>
-    <div class="forecast"></div>
+    <div class="row">
+        <div class="col-md-4 city-search">
+            <h4>Search for a City:</h4>
+            <form action="#">
+                <input type="text" placeholder="Search...">
+                <button type="submit"><i class="fa fa-search"></i></button>
+                <br><br>
+                <input type="text" placeholder="Austin">
+                <input type="text" placeholder="Chicago">
+                <input type="text" placeholder="New York">
+                <input type="text" placeholder="Orlando">
+                <input type="text" placeholder="San Francisco">
+                <input type="text" placeholder="Seattle">
+                <input type="text" placeholder="Denver">
+                <input type="text" placeholder="Atlanta">
+            </form>
+        </div>
+
+        <div class="container col-md-8">
+            <div class="search-results">
+                <h2>CITY SEARCHED</h2><br>
+                <div>Temperature:</div><br>
+                <div>Humidity:</div><br>
+                <div>Wind Speed:</div><br>
+                <div>UV Index:</div><br>
+            </div>
+
+            <div class="forecast">
+                <h4>5-Day Forecast:</h4>
+                <div class="weather-box">
+                    <p class="date">Date</p>
+                    <p class="icon"><i class="fas fa-sun"></i></p>
+                    <p class="temp">Temp</p>
+                </div>
+                <div class="weather-box">
+                    <p class="date">Date</p>
+                    <p class="icon"><i class="fas fa-sun"></i></p>
+                    <p class="temp">Temp</p>
+                </div>
+                <div class="weather-box">
+                    <p class="date">Date</p>
+                    <p class="icon"><i class="fas fa-sun"></i></p>
+                    <p class="temp">Temp</p>
+                </div>
+                <div class="weather-box">
+                    <p class="date">Date</p>
+                    <p class="icon"><i class="fas fa-sun"></i></p>
+                    <p class="temp">Temp</p>
+                </div>
+                <div class="weather-box">
+                    <p class="date">Date</p>
+                    <p class="icon"><i class="fas fa-sun"></i></p>
+                    <p class="temp">Temp</p>
+                </div>
+
+            </div>
+        </div>
+    </div>
     <footer>
 
     </footer>

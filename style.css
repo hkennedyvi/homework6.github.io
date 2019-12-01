@@ -1,3 +1,44 @@
+header {
+    background-color: black;
+    color: white;
+    text-align: center;
+    padding: 10px;
+}
+
+input {
+    width: 100%;
+    display: inline-block;
+    box-sizing: border-box;
+    padding: 12px 20px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
 .city-search {
-    float: left;
+    background-color: #ccc;
+    height: 600px;
+}
+
+.search-results {
+    background-color: white;
+    border: grey solid 1px;
+    border-radius: 4px;
+    width: 98%;
+    height: 60%;
+    padding: 20px;
+}
+
+.forecast {
+    background-color: lightcyan;
+    margin: 20px 0;
+    height: 35%;
+}
+
+.weather-box {
+    background-color: lightskyblue;
+    border-radius: 4px;
+    height: 150px;
+    width: 150px;
+    display: inline-block;
+    margin: 0px 15px;
 }
