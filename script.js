@@ -9,6 +9,8 @@ var date4 = moment().add(3, 'days').format('l');
 var date5 = moment().add(4, 'days').format('l');
 var latitude;
 var longitude;
+var cityList = $("#city-list");
+var cityHistory = [];
 
 $("#submitBtn").on("click", function () {
     searchTerm = $("#user-search").val().trim();
@@ -35,7 +37,7 @@ $("#submitBtn").on("click", function () {
 
         latitude = results.coord.lat;
         longitude = results.coord.lon;
-        giveUV(latitude, longitude);    
+        giveUV(latitude, longitude);
 
     })
 
@@ -74,23 +76,17 @@ function giveForecast() {
 
 function giveUV(latitude, longitude) {
 
-    //latitude = "29";
-    //longitude = "-127.5";
-
     var newURL3 = queryURLBase3 + latitude + "&lon=" + longitude + "&APPID=" + authKey;
 
     $.ajax({
         url: newURL3,
         method: "GET"
     }).then(function (response) {
-        console.log(response.value);
+        $(".uv-main").text("UV Index: " + response.value);
     })
 };
 
-//giveUV();
 
-var cityList = $("#city-list");
-var cityHistory = [];
 
 $("#submitBtn").on("click", function (event) {
     event.preventDefault();
@@ -104,9 +100,6 @@ $("#submitBtn").on("click", function (event) {
 
     cityHistory.push(newCity);
 
-    console.log(cityHistory);
-
-    //localStorage.setItem('Previous City Searched', cityHistory);
     localStorage.setItem(cityHistory, cityHistory);
     renderCities(newCity);
 
@@ -114,13 +107,10 @@ $("#submitBtn").on("click", function (event) {
 });
 
 function renderCities(newCity) {
-    //for (var i = 0; i < cityHistory.length; i++) {
-        //var city = cityHistory[i];
+  
 
-        var li = $("<li>");
-        li.text(newCity);
-        $("#city-list").append(li);
-        console.log("CITIESRENDERED");
-    //
-    
+    var li = $("<li>");
+    li.text(newCity);
+    $("#city-list").append(li);
+
 };
