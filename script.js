@@ -1,6 +1,6 @@
-var queryURLBase1 = "http://api.openweathermap.org/data/2.5/weather?q=";
-var queryURLBase2 = "http://api.openweathermap.org/data/2.5/forecast?q=";
-var queryURLBase3 = "http://api.openweathermap.org/data/2.5/uvi?lat=";
+var queryURLBase1 = "https://api.openweathermap.org/data/2.5/weather?q=";
+var queryURLBase2 = "https://api.openweathermap.org/data/2.5/forecast?q=";
+var queryURLBase3 = "https://api.openweathermap.org/data/2.5/uvi?lat=";
 var authKey = "6ea95deef040e0312c5d12a77e2056ce";
 var dateToday = moment().format('l');
 var date2 = moment().add(1, 'days').format('l');
@@ -24,7 +24,7 @@ $("#submitBtn").on("click", function () {
 
         var farenheit = ((results.main.temp - 273.15) * 9 / 5 + 32).toFixed();
         var weatherIcon = $("<img>");
-        weatherIcon.attr("src", "http://openweathermap.org/img/w/" + results.weather[0].icon + ".png");
+        weatherIcon.attr("src", "https://openweathermap.org/img/w/" + results.weather[0].icon + ".png");
 
         $(".city-main").text(results.name + " " + dateToday);
         $(".city-main").append(weatherIcon);
