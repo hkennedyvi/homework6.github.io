@@ -108,9 +108,8 @@ $("#submitBtn").on("click", function (event) {
 
 function renderCities(newCity) {
   
-
-    var li = $("<li>");
-    li.text(newCity);
-    $("#city-list").append(li);
+    var oldCity = $("<input>");
+    oldCity.val(newCity);
+    $("#city-list").append(oldCity);
 
 };
