@@ -1,29 +1,35 @@
-var queryURLBase1 = "https://api.openweathermap.org/data/2.5/weather?q=";
-var queryURLBase2 = "https://api.openweathermap.org/data/2.5/forecast?q=";
-var queryURLBase3 = "https://api.openweathermap.org/data/2.5/uvi?lat=";
-var authKey = "6ea95deef040e0312c5d12a77e2056ce";
-var dateToday = moment().format('l');
-var date2 = moment().add(1, 'days').format('l');
-var date3 = moment().add(2, 'days').format('l');
-var date4 = moment().add(3, 'days').format('l');
-var date5 = moment().add(4, 'days').format('l');
-var latitude;
-var longitude;
-var cityList = $("#city-list");
-var cityHistory = [];
+const weatherURL = "https://api.openweathermap.org/data/2.5/weather?q=";
+const forecastURL = "https://api.openweathermap.org/data/2.5/forecast?q=";
+const uvURL = "https://api.openweathermap.org/data/2.5/uvi?lat=";
+const authKey = "6ea95deef040e0312c5d12a77e2056ce";
+let dateToday = moment().format('l');
+let date2 = moment().add(1, 'days').format('l');
+let date3 = moment().add(2, 'days').format('l');
+let date4 = moment().add(3, 'days').format('l');
+let date5 = moment().add(4, 'days').format('l');
+let latitude;
+let longitude;
+let cityList = $("#city-list");
+let cityHistory = [];
 
-$("#submitBtn").on("click", function () {
-    searchTerm = $("#user-search").val().trim();
+$(document).ready(() => {
+$("#search-button").on("click", () => {
+    let searchTerm = $("#user-search").val().trim();
 
-    var newURL1 = queryURLBase1 + searchTerm + "&APPID=" + authKey;
+    function makeRow(text) {
+        var li = $("<li>").addClass("list-group-item list-group-item-action").text(text);
+        $(".history").append(li);
+      }
+
+    let newURL1 = weatherURL + searchTerm + "&APPID=" + authKey;
 
     $.ajax({
         url: newURL1,
         method: "GET"
-    }).then(function (results) {
-
-        var farenheit = ((results.main.temp - 273.15) * 9 / 5 + 32).toFixed();
-        var weatherIcon = $("<img>");
+    }).then((results) => {
+        makeRow(searchTerm);
+        let farenheit = ((results.main.temp - 273.15) * 9 / 5 + 32).toFixed();
+        let weatherIcon = $("<img>");
         weatherIcon.attr("src", "https://openweathermap.org/img/w/" + results.weather[0].icon + ".png");
 
         $(".city-main").text(results.name + " " + dateToday);
@@ -47,20 +53,20 @@ $("#submitBtn").on("click", function () {
 
 
 
-function giveForecast() {
+giveForecast = () => {
     searchTerm = $("#user-search").val().trim();
 
-    var newURL2 = queryURLBase2 + searchTerm + "&APPID=" + authKey;
+    let newURL2 = forecastURL + searchTerm + "&APPID=" + authKey;
 
     $.ajax({
         url: newURL2,
         method: "GET"
-    }).then(function (drivethru) {
+    }).then(function (results) {
 
-        var farenheit1 = ((drivethru.list[0].main.temp - 273.15) * 9 / 5 + 32).toFixed();
-        var farenheit2 = ((drivethru.list[8].main.temp - 273.15) * 9 / 5 + 32).toFixed();
-        var farenheit3 = ((drivethru.list[16].main.temp - 273.15) * 9 / 5 + 32).toFixed();
-        var farenheit4 = ((drivethru.list[24].main.temp - 273.15) * 9 / 5 + 32).toFixed();
+        var farenheit1 = ((results.list[0].main.temp - 273.15) * 9 / 5 + 32).toFixed();
+        var farenheit2 = ((results.list[8].main.temp - 273.15) * 9 / 5 + 32).toFixed();
+        var farenheit3 = ((results.list[16].main.temp - 273.15) * 9 / 5 + 32).toFixed();
+        var farenheit4 = ((results.list[24].main.temp - 273.15) * 9 / 5 + 32).toFixed();
 
         $(".date2").text(date2);
         $(".temp2").text(farenheit1 + " ºF");
@@ -74,24 +80,24 @@ function giveForecast() {
 
 };
 
-function giveUV(latitude, longitude) {
+giveUV = (latitude, longitude) => {
 
-    var newURL3 = queryURLBase3 + latitude + "&lon=" + longitude + "&APPID=" + authKey;
+    var newURL3 = uvURL + latitude + "&lon=" + longitude + "&APPID=" + authKey;
 
     $.ajax({
         url: newURL3,
         method: "GET"
-    }).then(function (response) {
-        $(".uv-main").text("UV Index: " + response.value);
+    }).then(function (results) {
+        $(".uv-main").text("UV Index: " + results.value);
     })
 };
 
 
 
-$("#submitBtn").on("click", function (event) {
+$("#submitBtn").on("click", (event) => {
     event.preventDefault();
 
-    var newCity = $("#user-search").val();
+    let newCity = $("#user-search").val();
 
 
     if (newCity === "") {
@@ -107,9 +113,10 @@ $("#submitBtn").on("click", function (event) {
 });
 
 function renderCities(newCity) {
-  
+
     var oldCity = $("<input>");
     oldCity.val(newCity);
     $("#city-list").append(oldCity);
 
 };
+});

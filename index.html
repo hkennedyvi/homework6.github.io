@@ -17,58 +17,67 @@
     <header>
         <h1>Weather Dashboard</h1>
     </header>
-
-    <div class="row">
-        <div class="col-md-4 city-search">
-            <h4>Search for a City:</h4>
-            <form id="city-form" method="POST">
-                <input id="user-search" type="text" placeholder="Search...">
-                <button type="submit" id="submitBtn"><i class="fa fa-search"></i></button>
-                <br><br>
-                <ul id="city-list">
-                
-               
-                </ul>
-            </form>
-        </div>
-
-        <div class="container col-md-8">
-            <div class="search-results">
-                <h2 class="city-main">CITY SEARCHED</h2><br>
-                <div class="temp-main">Temperature:</div><br>
-                <div class="humid-main">Humidity:</div><br>
-                <div class="wind-main">Wind Speed:</div><br>
-                <div class="uv-main">UV Index:</div><br>
-            </div>
-
-            <div class="forecast">
-                <h4>5-Day Forecast:</h4>
-                <div class="weather-box col-md-1.5">
-                    <p class="date1">Date</p>
-                    <p class="icon1"><i class="fas fa-sun"></i></p>
-                    <p class="temp1">Temp</p>
-                </div>
-                <div class="weather-box col-md-1.5">
-                    <p class="date2">Date</p>
-                    <p class="icon2"><i class="fas fa-sun"></i></p>
-                    <p class="temp2">Temp</p>
-                </div>
-                <div class="weather-box col-md-1.5">
-                    <p class="date3">Date</p>
-                    <p class="icon3"><i class="fas fa-sun"></i></p>
-                    <p class="temp3">Temp</p>
-                </div>
-                <div class="weather-box col-md-1.5">
-                    <p class="date4">Date</p>
-                    <p class="icon4"><i class="fas fa-sun"></i></p>
-                    <p class="temp4">Temp</p>
-                </div>
-                <div class="weather-box col-md-1.5">
-                    <p class="date5">Date</p>
-                    <p class="icon5"><i class="fas fa-sun"></i></p>
-                    <p class="temp5">Temp</p>
+    <div class="container-fluid">
+        <div class="row">
+            <aside class="col-lg-3 bg-light">
+                <h5 class="mt-3">Search for a City:</h5>
+                <div class="form-inline form-group">
+                    <input class="form-control" type="text" id="user-search" />
+                    <button class="btn btn-primary" id="search-button"> <i class="fa fa-search"></i> </button>
                 </div>
 
+                <ul class="list-group history"></ul>
+            </aside>
+
+            <div class="col-lg-9">
+                <div class="search-results mt-3">
+                    <h2 class="city-main">CITY SEARCHED</h2><br>
+                    <div class="temp-main">Temperature:</div><br>
+                    <div class="humid-main">Humidity:</div><br>
+                    <div class="wind-main">Wind Speed:</div><br>
+                    <div class="uv-main">UV Index:</div><br>
+                </div>
+
+                <div class="forecast mt-3">
+                    <h4 class="mt-3">5-Day Forecast:</h4>
+                    <div class="row">
+                        <div class="col-md-2">
+                            <div class="card bg-primary text-white">
+                                <p class="date1">Date</p>
+                                <p class="icon1"><i class="fas fa-sun"></i></p>
+                                <p class="temp1">Temp</p>
+                            </div>
+                        </div>
+                        <div class="col-md-2">
+                            <div class="card bg-primary text-white">
+                                <p class="date2">Date</p>
+                                <p class="icon2"><i class="fas fa-sun"></i></p>
+                                <p class="temp2">Temp</p>
+                            </div>
+                        </div>
+                        <div class="col-md-2">
+                            <div class="card bg-primary text-white">
+                                <p class="date3">Date</p>
+                                <p class="icon3"><i class="fas fa-sun"></i></p>
+                                <p class="temp3">Temp</p>
+                            </div>
+                        </div>
+                        <div class="col-md-2">
+                            <div class="card bg-primary text-white">
+                                <p class="date4">Date</p>
+                                <p class="icon4"><i class="fas fa-sun"></i></p>
+                                <p class="temp4">Temp</p>
+                            </div>
+                        </div>
+                        <div class="col-md-2">
+                            <div class="card bg-primary text-white">
+                                <p class="date4">Date</p>
+                                <p class="icon4"><i class="fas fa-sun"></i></p>
+                                <p class="temp4">Temp</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
