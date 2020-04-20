@@ -2,103 +2,42 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
-        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
-        integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous" />
-    <title>Weather App</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+  <title>Weather Dashboard</title>
 </head>
 
 <body>
-    <header>
-        <h1>Weather Dashboard</h1>
-    </header>
-    <div class="container-fluid">
-        <div class="row">
-            <aside class="col-lg-3 bg-light">
-                <h5 class="mt-3">Search for a City:</h5>
-                <div class="form-inline form-group">
-                    <input class="form-control" type="text" id="user-search" />
-                    <button class="btn btn-primary" id="search-button"> <i class="fa fa-search"></i> </button>
-                </div>
+  <header class="container-fluid text-center text-white p-2">
+    <h1>Weather Dashboard</h1>
+  </header>
 
-                <ul class="list-group history"></ul>
-            </aside>
-
-            <div class="col-lg-9">
-                <div class="search-results mt-3">
-                    <h2 class="city-main">CITY SEARCHED</h2><br>
-                    <div class="temp-main">Temperature:</div><br>
-                    <div class="humid-main">Humidity:</div><br>
-                    <div class="wind-main">Wind Speed:</div><br>
-                    <div class="uv-main">UV Index:</div><br>
-                </div>
-
-                <div class="forecast mt-3">
-                    <h4 class="mt-3">5-Day Forecast:</h4>
-                    <div class="row">
-                        <div class="col-md-2">
-                            <div class="card bg-primary text-white">
-                                <p class="date1">Date</p>
-                                <p class="icon1"><i class="fas fa-sun"></i></p>
-                                <p class="temp1">Temp</p>
-                            </div>
-                        </div>
-                        <div class="col-md-2">
-                            <div class="card bg-primary text-white">
-                                <p class="date2">Date</p>
-                                <p class="icon2"><i class="fas fa-sun"></i></p>
-                                <p class="temp2">Temp</p>
-                            </div>
-                        </div>
-                        <div class="col-md-2">
-                            <div class="card bg-primary text-white">
-                                <p class="date3">Date</p>
-                                <p class="icon3"><i class="fas fa-sun"></i></p>
-                                <p class="temp3">Temp</p>
-                            </div>
-                        </div>
-                        <div class="col-md-2">
-                            <div class="card bg-primary text-white">
-                                <p class="date4">Date</p>
-                                <p class="icon4"><i class="fas fa-sun"></i></p>
-                                <p class="temp4">Temp</p>
-                            </div>
-                        </div>
-                        <div class="col-md-2">
-                            <div class="card bg-primary text-white">
-                                <p class="date4">Date</p>
-                                <p class="icon4"><i class="fas fa-sun"></i></p>
-                                <p class="temp4">Temp</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+  <div class="container-fluid">
+    <div class="row">
+      <aside class="col-lg-3 bg-light">
+        <h5 class="mt-1">Search for a City:</h5>
+        <div class="form-inline form-group">
+          <input class="form-control" type="text" id="search-value" />
+          <button class="btn btn-primary" id="search-button"> <i class="fa fa-search"></i> </button>
         </div>
+
+        <ul class="list-group history"></ul>
+      </aside>
+
+      <div class="col-lg-9">
+        <div id="today" class="mt-3"></div>
+        <div id="forecast" class="mt-3"></div>
+      </div>
     </div>
-    <footer>
+  </div>
 
-    </footer>
-    <script src="https://code.jquery.com/jquery-3.4.1.js"
-        integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
-    <script src="script.js"></script>
-
+  <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+  <script src="script.js"></script>
 </body>
 
 </html>
-
-<!--
-<li><input type="text" placeholder="Austin"></li>    
-<input type="text" placeholder="Chicago">
-<input type="text" placeholder="New York">
-<input type="text" placeholder="Orlando">
-<input type="text" placeholder="San Francisco">
-<input type="text" placeholder="Seattle">
-<input type="text" placeholder="Denver">
-<input type="text" placeholder="Atlanta">!-->
