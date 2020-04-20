@@ -1,4 +1,4 @@
-# homework6.github.io
+# Weather Dashboard
 
 The function of this application is to provide a user with weather information so that they may plan their travels accordingly. 
 
